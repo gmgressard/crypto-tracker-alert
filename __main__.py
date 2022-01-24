@@ -15,7 +15,7 @@ session.headers.update(headers)
 
 res = session.get(url)
 data = json.loads(res.text)
-# pprint.pprint(data)
+pprint.pprint(data['data'][:6])
 
 # i = 0 #refers to position in list of dictionaries of cryptocurrencies 
 
@@ -23,6 +23,3 @@ name = data['data'][0]['name']
 symbol = data['data'][0]['symbol']
 rank = data['data'][0]['cmc_rank']
 price = data['data'][0]['quote']['USD']['price']
-
-
-
