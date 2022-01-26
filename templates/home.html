@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <tite>
-            Crypto Tracker Alerts
-        </tite>
 
         <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -11,7 +8,15 @@
 
     </head>
     <body>
-        <div id='root'></div>
+        <div id='root'>
         <script type="text/jsx" src="/static/home.jsx"></script>
+        </div>
+        <div id='coin'>
+           <table>
+            {% for coin in top_ten_list %}
+                <ul id ='coin'>{{coin['cmc_rank'], coin['name'], coin['symbol'], coin['quote']['USD']['price']}}</ul>
+            {% endfor %}
+            </table>
+        </div>
     </body>
 </html>
